@@ -370,22 +370,22 @@ axios.interceptors.response.use(
 
 export default {
   getTasks: async () => {
-    const result = await axios.get('/'); // לא צריך לחזור על הכתובת
+    const result = await axios.get('/items'); // לא צריך לחזור על הכתובת
     return result.data;
   },
 
   addTask: async (name) => {
-    const result = await axios.post('/', { Name: name, IsComplete: false });
+    const result = await axios.post('/items', { Name: name, IsComplete: false });
     return result.data;
   },
 
   setCompleted: async (id, isComplete) => {
-    const result = await axios.put(`/${id}`, { IsComplete: isComplete });
+    const result = await axios.put(`/items/${id}`, { IsComplete: isComplete });
     return result.data;
   },
 
   deleteTask: async (id) => {
-    await axios.delete(`/${id}`);
+    await axios.delete(`/items/${id}`);
     return { message: 'Task deleted successfully' };
   }
 };

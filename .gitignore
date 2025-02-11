@@ -5,7 +5,7 @@
 
 # dotenv files
 .env
-
+environmentVariables.env
 # User-specific files
 *.rsuser
 *.suo

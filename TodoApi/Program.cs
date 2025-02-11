@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 // Configure the DbContext
 builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql("server=localhost;user=root;password=aA1795aA;database=ToDoDB", 
+    options.UseMySql(builder.Configuration.GetConnectionString("ToDoDB"), 
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.35-mysql")));
 
 // הוסף את הגדרת CORS
